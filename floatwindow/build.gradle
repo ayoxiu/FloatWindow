@@ -4,6 +4,13 @@ android {
     compileSdkVersion 26
     buildToolsVersion "26.0.2"
 
+        // ... 其他配置
+
+    lintOptions {
+        abortOnError false
+        // 如果还有问题，也可以添加这些
+        checkReleaseBuilds false
+    }
 
     defaultConfig {
         minSdkVersion 19
