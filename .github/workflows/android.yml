@@ -1,5 +1,6 @@
 name: Android CI
 
+
 on:
   push:
     branches: [ "master" ]
@@ -24,3 +25,9 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+    - name: Upload APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: app-debug
+        path: ${{ github.workspace }}/app/build/outputs/apk/**/*.apk
+
