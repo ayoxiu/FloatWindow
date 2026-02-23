@@ -1,9 +1,19 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
+
+
+
 buildscript {
     
     repositories {
-        jcenter()
+               // 删除这行
+        // jcenter()
+
+        // 添加这些
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
@@ -18,8 +28,14 @@ buildscript {
 
 allprojects {
     repositories {
-        jcenter()
+        
         maven { url "https://jitpack.io" }
+
+                // 同样替换
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
     }
 }
 
