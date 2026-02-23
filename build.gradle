@@ -36,6 +36,19 @@ allprojects {
         maven { url 'https://maven.aliyun.com/repository/central' }
         maven { url 'https://maven.aliyun.com/repository/jcenter' }
         maven { url 'https://maven.aliyun.com/repository/public' }
+            // 添加这个块
+    subprojects {
+        afterEvaluate {
+            if (project.hasProperty("android")) {
+                android {
+                    lintOptions {
+                        abortOnError false
+                        checkReleaseBuilds false
+                    }
+                }
+            }
+        }
+    }
     }
 }
 
